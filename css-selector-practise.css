@@ -43,3 +43,13 @@ div.a ul li:nth-child(6),
 div.a ul li:nth-child(7) {
   color: red;
 }
+
+.b ul li:nth-child(-n + 25) {
+  color: red;
+}
+.b ul li:nth-child(n + 65) {
+  color: green;
+}
+.b ul li:nth-child(n + 35):nth-child(-n + 50) {
+  color: blue;
+}
