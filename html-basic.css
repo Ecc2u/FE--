@@ -1,9 +1,10 @@
 h2 {
   color: blueviolet;
   border: 2px sandybrown solid;
-  border-radius: 5px;
+  border-radius: 20px;
   width: 200px;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
   
 }
