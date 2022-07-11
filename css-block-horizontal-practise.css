@@ -1,3 +1,18 @@
+
+body {
+  margin: 0;
+}
+div[class] {
+  margin-top: 20px;;
+}
+section {
+  background-color: red;
+}
+section .a {
+  width: 600px;
+  margin: auto;
+  background-color: red;
+}
 .a {
   background-color: red;
   padding-left: 100px;
