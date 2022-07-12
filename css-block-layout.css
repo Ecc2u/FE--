@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+}
+.header {
+  background-color: black;
+}
+.header p {
+  width: 600px;
+  color: white;
+  margin: 0 auto;
+}
+.contant {
+  width: 600px;
+  margin: 5px auto;
+}
+.chanpin {
+
+}
+.chanpin div {
+  border: 3px black solid;
+  width: 174px;
+  height: 34px;
+  background-color: blueviolet;
+  margin: 15px 0px;
+  text-align: center;
+  line-height: 34px;
+}
+.chanpin div:hover {
+  background-color: turquoise;
+}
+.chanpin div:nth-child(n + 5) {
+  margin-left: 210px;
+}
+.chanpin div:nth-child(n + 9) {
+  margin-left: 420px;
+}
+.chanpin div:nth-child(4n + 5) {
+  margin-top: -220px;
+}
+.link div {
+  border-bottom: dashed 1px black;
+}
+.link div:last-child {
+  border-bottom: transparent;
+}
+.bottom {
+  background-color: pink;
+}
+.bottom div {
+  margin: 0 auto;
+  text-align: center;
+}
