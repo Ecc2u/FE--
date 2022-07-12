@@ -10,12 +10,19 @@ body {
   border: 2px solid;
   overflow: auto;
 }
+.left p {
+  margin-left: 0px;
+  font-size: 30px;
+  padding-left: 0px;
+}
 .left input {
-  margin-left: 2px;
+  margin-left: 5px;
   height: 25px;
+  width: 100px;
 }
 .left button {
   height: 20px;
+  width: 30px;
 }
 .left h2 {
   margin-top: 0px;
