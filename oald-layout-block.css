@@ -8,11 +8,25 @@ body {
   height: 100vh;
   box-sizing: border-box;
   border: 2px solid;
+  overflow: auto;
+}
+.left input {
+  margin-left: 2px;
+  height: 25px;
+}
+.left button {
+  height: 20px;
 }
 .left h2 {
   margin-top: 0px;
   padding-top: 20px;
   padding-left: 40px;
+}
+.left ul {
+  list-style: none;
+}
+.left ul li a {
+  text-decoration: none;
 }
 .content1 {
   background-color: burlywood;
