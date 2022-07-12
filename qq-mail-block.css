@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+header {
+  background-color: cornflowerblue;
+  height: 100px;
+  width: 100%;
+}
+.left {
+  background-color: yellow;
+  width: 200px;
+  overflow-y: scroll;
+  height: calc(100vh - 100px);
+}
+.contant {
+  background-color: brown;
+  margin-left: 200px;
+  overflow: auto;
+  margin-top: calc(100px - 100vh);
+  width: calc(100vw - 200px);
+  height: calc(100vh - 100px);
+}
