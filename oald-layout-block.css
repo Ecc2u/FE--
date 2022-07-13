@@ -8,7 +8,7 @@ body {
   height: 100vh;
   box-sizing: border-box;
   border: 2px solid;
-  overflow: auto;
+  overflow: scroll;
 }
 .left p {
   margin-left: 0px;
@@ -44,7 +44,14 @@ body {
   border: 1px solid;
   min-width: 330px;
   height: 100vh;
-  overflow: hidden;
+}
+.content1 div {
+  margin-left: 20px;
+}
+.content1 ul {
+  list-style-type: decimal;
+  height:calc(100vh - 150px);
+  overflow-y: scroll;
 }
 .content2 {
   background-color: yellowgreen;
@@ -54,6 +61,11 @@ body {
   width: 200px;
   height: 100vh;
   box-sizing: border-box;
+}
+.content1 h2 {
+  height: 75px;
+  border-bottom: 1px solid black;
+  margin-left: 30px;
 }
 .content3 {
   background-color: blue;
