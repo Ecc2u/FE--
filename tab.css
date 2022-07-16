@@ -1,0 +1,43 @@
+/* * {
+  background-color: rgba(0,0,0,0.08);
+  box-shadow: inset 0 0 1px red;
+} */
+
+ul {
+  background-color: #3c3c3c;
+}
+li {
+  list-style:none;
+  color:white;
+}
+.nav .tab1 ul li:hover {
+  background-color: #002FA7;
+}
+.nav div {
+  display:inline-block;
+}
+.nav .tab1 {
+  position:relative;
+}
+.nav .tab1:hover ul {
+  display:block;
+}
+.nav .tab1 ul {
+  position:absolute;
+  white-space:nowrap;
+  top:5px;
+  padding-left:0px;
+  display:none;
+}
+.nav .tab1 .tab2 {
+  position:relative;
+}
+.nav .tab1 .tab2:hover ul {
+  display:block;
+}
+.nav .tab1 .tab2 ul {
+  display:none;
+  position:absolute;
+  top:0px;
+  left:100%;
+}

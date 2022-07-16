@@ -37,6 +37,25 @@ body {
 .chanpin div:nth-child(4n + 5) {
   margin-top: -220px;
 }
+.chanpin2 {
+  font-size: 0px;
+}
+.chanpin2 span {
+  border: 1px solid blue;
+  font-size: 23px;
+  line-height: 23px;
+  margin: 0px 35px;
+  padding: 0px 40px;
+  background-color: aliceblue;
+}
+.chanpin3 span {
+  border: 1px solid blue;
+  line-height: 100px;
+}
+.chanpin4 span {
+  border: 1px solid blue;
+  line-height: 100px;
+}
 .link div {
   border-bottom: dashed 1px black;
 }
