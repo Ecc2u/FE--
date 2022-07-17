@@ -1,20 +1,17 @@
-/* * {
-  background-color: rgba(0,0,0,0.08);
-  box-shadow: inset 0 0 1px red;
-} */
+
 
 ul {
   background-color: #3c3c3c;
 }
 li {
   list-style:none;
-  color:white;
 }
 .nav .tab1 ul li:hover {
-  background-color: #002FA7;
+  background-color: #2CA0D9 ;
 }
 .nav div {
   display:inline-block;
+  vertical-align: middle;
 }
 .nav .tab1 {
   position:relative;
@@ -25,8 +22,9 @@ li {
 .nav .tab1 ul {
   position:absolute;
   white-space:nowrap;
-  top:5px;
-  padding-left:0px;
+  top:7px;
+  left:-1px;
+  padding-left:5px;
   display:none;
 }
 .nav .tab1 .tab2 {
@@ -39,5 +37,114 @@ li {
   display:none;
   position:absolute;
   top:0px;
-  left:100%;
+  left:111px;
+}
+
+/* From uiverse.io */
+.tab1,.tab1 ul {
+ align-items: center;
+ background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+ border: 0;
+ border-radius: 2px;
+ box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+ box-sizing: border-box;
+ color: #ffffff;
+ display: flex;
+ font-family: Phantomsans, sans-serif;
+ font-size: 18px;
+ justify-content: center;
+ line-height: 1em;
+ xmax-width: 100%;
+ xmin-width: 50px;
+ padding: 3px;
+ text-decoration: none;
+ xtext-align: center;
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ white-space: nowrap;
+ cursor: pointer;
+ transition: all .3s;
+}
+
+.tab1:active,
+.tab1:hover {
+ outline: 0;
+}
+
+button span {
+ background-color: rgb(5, 6, 45);
+ padding: 16px 24px;
+ border-radius: 6px;
+ width: 100%;
+ height: 100%;
+ transition: 300ms;
+}
+
+.tab1:hover span {
+ background: none;
+}
+
+.tab1:active {
+ transform: scale(0.9);
+}
+
+/* From uiverse.io by @AqFox */
+.spinner {
+ width: 10px;
+ height: 10px;
+ margin-top:-0px;
+ margin-right:10px;
+ animation: spinner-y0fdc1 2s infinite ease;
+ transform-style: preserve-3d;
+}
+
+.spinner > div {
+ background-color: rgba(0,77,255,0.2);
+ height: 100%;
+ position: absolute;
+ width: 100%;
+ border: 2px solid #004dff;
+}
+
+.spinner div:nth-of-type(1) {
+ transform: translateZ(-5px) rotateY(180deg);
+}
+
+.spinner div:nth-of-type(2) {
+ transform: rotateY(-270deg) translateX(50%);
+ transform-origin: top right;
+}
+
+.spinner div:nth-of-type(3) {
+ transform: rotateY(270deg) translateX(-50%);
+ transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+ transform: rotateX(90deg) translateY(-50%);
+ transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+ transform: rotateX(-90deg) translateY(50%);
+ transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+ transform: translateZ(5px);
+}
+
+@keyframes spinner-y0fdc1 {
+ 0% {
+  transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+ }
+
+ 50% {
+  transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+ }
+
+ 100% {
+  transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+ }
 }
