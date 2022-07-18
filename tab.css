@@ -35,14 +35,24 @@ li {
   display:none;
   position:absolute;
   top:0px;
-  left:118px;
+  left:100%;
 }
+.nav .tab1 .tab2 .tab3 ul {
+  display:none;
+}
+
+.nav .tab1 .tab2 .tab3:hover ul {
+  display:block;
+}
+
+
+
 
 /* From uiverse.io by @CristianMontoya98 */
 .tab1,.tab1 ul li {
  xwidth: 3.5em;
  xheight: 2.3em;
- 
+ xpadding:2px 5px;
  background: black;
  color: white;
  border: none;
@@ -53,7 +63,7 @@ li {
  position: relative;
  z-index: 1;
  
- text-align: center;
+  Xtext-align: center;
   xline-height:2.3em;
 }
 
@@ -99,4 +109,66 @@ li {
  transform: skewX(-45deg) scale(1, 1);
  -webkit-transition: all 0.5s;
  transition: all 0.5s;
+}
+
+
+/* From uiverse.io by @G4b413l */
+.pinwheel {
+  --uib-size: 30px;
+  --uib-speed: 0.8s;
+  --uib-color: #312f2b;
+  --uib-line-weight: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  margin-right:10px;
+}
+
+.pinwheel__line {
+  position: absolute;
+  top: calc(50% - var(--uib-line-weight) / 2);
+  left: 0;
+  height: var(--uib-line-weight);
+  width: 100%;
+  border-radius: calc(var(--uib-line-weight) / 2);
+  background-color: var(--uib-color);
+  animation: rotate81232 var(--uib-speed) ease-in-out infinite;
+}
+
+.pinwheel__line:nth-child(2) {
+  animation-delay: calc(var(--uib-speed) * 0.075);
+  opacity: 0.8;
+}
+
+.pinwheel__line:nth-child(3) {
+  animation-delay: calc(var(--uib-speed) * 0.15);
+  opacity: 0.6;
+}
+
+.pinwheel__line:nth-child(4) {
+  animation-delay: calc(var(--uib-speed) * 0.225);
+  opacity: 0.4;
+}
+
+.pinwheel__line:nth-child(5) {
+  animation-delay: calc(var(--uib-speed) * 0.3);
+  opacity: 0.2;
+}
+
+.pinwheel__line:nth-child(6) {
+  animation-delay: calc(var(--uib-speed) * 0.375);
+  opacity: 0.1;
+}
+
+@keyframes rotate81232 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
 }
