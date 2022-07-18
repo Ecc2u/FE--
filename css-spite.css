@@ -1,0 +1,30 @@
+
+.search {
+  background-image: url(./spite.png);
+  height: 40px;
+  background-position: 3px 3px;
+  background-repeat: no-repeat;
+  width: 40px;
+}
+
+.input {
+  background-image: url(./spite.png);
+  background-position: bottom 0px left 0px;
+  width: 40px;
+  height: 35px;
+}
+
+.mircrosoft {
+  background-image: url(./spite.png);
+  background-position: top 0px right 804px;
+  width: 40px;
+  height: 40px;
+}
+
+
+.twitter {
+  background-image: url(./spite.png);
+  background-position: top 0px left 355px;
+  width: 35px;
+  height: 35px;
+}
