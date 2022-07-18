@@ -11,7 +11,7 @@
   background-image: url(./spite.png);
   background-position: bottom 0px left 0px;
   width: 40px;
-  height: 35px;
+  height: 40px;
 }
 
 .mircrosoft {
@@ -27,4 +27,11 @@
   background-position: top 0px left 355px;
   width: 35px;
   height: 35px;
+}
+
+.facebook {
+  background-image: url(./spite.png);
+  background-position: bottom 60px left 1176px;
+  width: 60px;
+  height:60px;
 }
