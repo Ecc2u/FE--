@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    section {
+      /* position: relative; */
+    }
+    section > input {
+      position: relative;
+      top: 200px;
+      left: 45px;
+      z-index: 100;
+    }
+    .imgs {
+      position: relative;
+    }
+    section div img {
+      transition: 1s;
+      opacity: 0;
+      position: absolute;
+    }
+
+    input:nth-child(1):checked ~ div img:nth-child(1) {
+      display: block;
+      opacity: 1;
+    }
+
+    input:nth-child(2):checked ~ div img:nth-child(2) {
+      display: block;
+      opacity: 1;
+    }
+
+    input:nth-child(3):checked ~ div img:nth-child(3) {
+      display: block;
+      opacity: 1;
+    }
+
+    input:nth-child(4):checked ~ div img:nth-child(4) {
+      display: block;
+      opacity: 1;
+    }
+
+
+
+  </style>
+  
+  <title>radio-slider</title>
+</head>
+<body>
+  <section>
+
+    <input type="radio" name="radio">
+    <input type="radio" name="radio">
+    <input type="radio" name="radio">
+    <input type="radio" name="radio">
+
+    <div class="imgs">
+      <img src="./img/1.jpg" alt="">
+      <img src="./img/5.jpg" alt="">
+      <img src="./img/3.jpg" alt="">
+      <img src="./img/6.jpg" alt="">
+    </div>
+    <div class="imgs">
+      <img src="./img/1.jpg" alt="">
+      <img src="./img/5.jpg" alt="">
+      <img src="./img/3.jpg" alt="">
+      <img src="./img/6.jpg" alt="">
+    </div>
+    <div class="imgs">
+      <img src="./img/1.jpg" alt="">
+      <img src="./img/5.jpg" alt="">
+      <img src="./img/3.jpg" alt="">
+      <img src="./img/6.jpg" alt="">
+    </div>
+    <div class="imgs">
+      <img src="./img/1.jpg" alt="">
+      <img src="./img/5.jpg" alt="">
+      <img src="./img/3.jpg" alt="">
+      <img src="./img/6.jpg" alt="">
+    </div>
+  </section>
+</body>
+</html>
