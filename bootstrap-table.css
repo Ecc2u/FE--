@@ -98,3 +98,7 @@ html,body {
 .table-dark tbody tr:hover {
   background-color: rgb(50, 53, 57);
 }
+
+.table-dark tbody tr:nth-child(2n-1) {
+  background-color: rgb(50,53,57);
+}
