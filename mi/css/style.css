@@ -905,3 +905,49 @@ input:nth-child(4):checked ~ div img:nth-child(4) {
   margin: 30px auto;
   padding-left: 429px;
 }
+
+/* 右侧导航栏 */
+.home-bar {
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+}
+.toolbar {
+  width: 84px;
+  height: 92px;
+}
+@media (min-width:1450px) {
+  .home-bar{
+    width: 84px;
+    height: 455px;
+    position: fixed;
+    bottom: 84px;
+    right: 0;
+  }
+}
+
+@media (max-width:1450px) {
+  .home-bar{
+    width: 27px;
+    height: 210px;
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    margin-left: calc(1225px / 2);
+    right: auto;
+  }
+  .bar-font {
+    display: none;
+  }
+  .toolbar {
+    width: 27px;
+    height: 42px;
+  }
+}
+@media(max-width:1296px) {
+  .home-bar {
+    position: fixed;
+    right: 0;
+    left: auto;
+  }
+}

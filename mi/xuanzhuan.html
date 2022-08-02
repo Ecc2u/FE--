@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旋转</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .out {
+      width:100px;
+      height:100px;
+      position: relative;
+      background-color: blueviolet;
+      border-radius: 50px;
+    }
+    .out:hover {
+      transform: rotate(360deg);
+      transition: 5s linear;
+    }
+    .out:hover .in {
+      transform: rotate(-360deg);
+      transform-origin: 50px 50px;
+      transition: 5s linear;
+    }
+    .in {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="out">
+    <div class="in">😍</div>
+  </div>
+</body>
+</html>
