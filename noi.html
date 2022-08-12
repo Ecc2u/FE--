@@ -149,8 +149,304 @@
   alert(a * b)
 </script>
 
-<script  id="ch0103/20">
+<script type="x" id="ch0103/20">
   var n = Number(prompt())
 
   alert(2**n)
 </script>
+
+<!-- NOI-105 编程基础之循环控制 -->
+
+<script type="x" id="ch0105/01">
+ 
+  var n = Number(prompt()) //学生个数
+  var totalAge = 0 
+  for (let index = 1; index <= n; index++) {
+    var age = Number(prompt('请输入第' + index + '人的年龄'))
+    totalAge = totalAge + age
+  }
+  var average = totalAge / n
+  console.log(average.toFixed(2))
+
+</script>
+
+<script type="x"  id="ch0105/02">
+  var totaljieyu = 0
+  for (let index = 1; index <= 12; index++) {
+    var jieyu = Number(prompt('请输入第' +  index + '月的结余'))
+    totaljieyu = totaljieyu + jieyu
+  }
+  var average = (totaljieyu / 12).toFixed(2)
+  console.log('$' + average)
+</script>
+
+<script type="x" id="ch0105/03">
+  var n = Number(prompt('请输入样本容量')) 
+  var s = 0
+  for (let index = 1; index <= n; index++) {
+    var number = Number(prompt('输入第' + index + '个数')) 
+    s = s + number
+  }
+  var average = (s / n).toFixed(4)
+  console.log(average)
+
+</script>
+
+<script type="x" id="ch0105/04">
+  var n = Number(prompt('请输入样本容量')) 
+  var s = 0 //和
+  var a = 0 //平均值
+  for (let index = 0; index < n; index++) {
+    var t = Number(prompt('第' + index + '个数')) 
+    s = s + t
+  }
+  a = s / n
+  console.log(s)
+  console.log(a.toFixed(5))
+</script>
+
+<script type="x" id="ch0105/05">
+  var n = Number(prompt('请输入样本容量')) 
+  var max = 0 //最大值
+  
+  for (let index = 0; index < n; index++) {
+    var t = Number(prompt('第' + index + '个学生的成绩'))
+    if (t > max) {
+      max = t
+    }
+  }
+  console.log(max)
+</script>
+
+<script type="x" id="ch0105/06">
+  var n = Number(prompt('请输入序列长度')) 
+  var max = 1
+  var min = 1000
+
+  for (let index = 0; index < n; index++) {
+    var t = Number(prompt('请输入序列的第' + index + '个数'))
+    if(t > max) {
+      max = t
+    }
+    if(t < min) {
+      min = t
+    }
+  }
+  console.log(max - min)
+</script>
+
+<script type="x" id="ch0105/07">
+
+  var n = Number(prompt('请输入参加的天数'))
+  var Sgold = 0
+  var Ssilver = 0
+  var Scopper = 0
+  for (let index = 1; index <= n; index++) {
+    var gold = Number(prompt('输入第' + index + '天得到的金牌数'))
+    var silver = Number(prompt('输入第' + index + '天得到的银牌数'))
+    var copper = Number(prompt('输入第' + index + '天得到的铜牌数'))
+    
+    Sgold = Sgold + gold
+    Ssilver = Ssilver + silver
+    Scopper = Scopper + copper 
+    S = Sgold + Ssilver + Scopper
+  }
+  console.log(Sgold,Ssilver,Scopper,S)
+</script>
+
+<script type="x" id="ch0105/08">
+  var n = Number(prompt('多边形为几边形'))
+  var t = 0 //已知内角的和
+  var r = 0 //剩下的内角度数
+
+  for (let index = 1; index < n; index++) {
+    var l = Number(prompt('输入第' + index + '个内角的度数'))
+    t = t + l
+  }
+  console.log((n-2) * 180 - t )
+</script>
+
+<script type="x"  id="ch0105/09">
+  var m = Number(prompt('请输入m'))
+  var n = Number(prompt('请输入n'))
+  var t = m  //遍历指针
+  var end = 0
+  for (let index = 0; index < n-m+1; index++) {
+    if (t % 2 === 1) {
+      end = end + t
+    }
+    t = t + 1
+  }
+  console.log(end)
+</script>
+
+<script type="x"  id="ch0105/10">
+  var m = Number(prompt('请输入m'))
+  var n = Number(prompt('请输入n'))
+  var t = m  //遍历指针
+  var end = 0
+  for (let index = 0; index < n-m+1; index++) {
+    if (t % 17 === 0) {
+      end = end + t
+    }
+    t = t + 1
+  }
+  console.log(end)
+</script>
+
+<script type="x" id="ch0105/11">
+  var k = Number(prompt('有多少个正整数')) //k个数
+  var k1 = 0 
+  var k5 = 0
+  var k10 = 0
+  for (let index = 0; index < k; index++) {
+    var s = Number(prompt('输入的第' + index + '个数'))
+    if(s === 1) {
+      k1 = k1 + 1 
+    }
+    if (s === 5) {
+      k5 = k5 + 1 
+    }
+    if (s === 10) {
+      k10 = k10 +1 
+    }
+  }
+  console.log(k1,k5,k10)
+</script>
+
+<script type="x" id="ch0105/12">
+  
+  var N = Number(prompt('整数序列的长度'))
+  var m = Number(prompt('指定的数字')) 
+  var end = 0 //相同的个数
+
+  for (let index = 0; index < N; index++) {
+    var x = Number(prompt('输入第' + index + '个数'))
+    if (x === m) {
+      end++
+    }
+  }
+
+  console.log(end)
+</script>
+
+<script type="x" id="ch0105/13">
+  var a = Number(prompt('输入整数'))
+  var n = Number(prompt('几次幂')) 
+  
+  console.log(a ** n)
+</script>
+
+<script id="ch0105/14">
+  var x = Number(prompt('人口数'))
+  var n = Number(prompt('年数'))
+  
+  for (let index = 0; index < n; index++) {
+    x = x * 1.001
+  }
+  console.log(x.toFixed(4))
+</script>
+
+<script type="x" id="ch0105/15">
+  var R = Number(prompt('复合年利率'))
+  var M = Number(prompt('总值'))
+  var Y = Number(prompt('投资年数'))
+  
+  var end = 0 //最终获利
+
+  for (let index = 0; index < Y; index++) {
+    M = M * (1 + R / 100)
+  }
+  console.log(M.toFixed(0))
+</script>
+
+<!-- <script id="ch0105/16">
+  var N = Number(prompt('年薪'))
+  var K = Number(prompt('房价每年增长率')) // M年后 房价 M * (1 + K/100 )的M次幂
+  var M = 0 //年数
+
+  var price = 200 * (1 + (1 + K/100) ** M)
+  var xin = N * M
+  if ((M < 20) &&( xin > price)) {
+    console.log(M)
+  } else console.log("impossible")
+  
+</script> -->
+
+<!-- <script id="ch0105/17">
+  var K = Number(prompt('求数列的第几项'))
+  var end = 0
+  if (K == 1 || K == 2) {
+    end = 1
+  } else {
+    for (let index = 0; index < K; index++) {
+      
+      
+    }
+  }
+</script> -->
+
+<!-- <script id="ch0105/18">
+  var n = Number(prompt('有几组实验组'))
+
+  
+    for (let index = 1; index <= n; index++) {
+      if(index = 1) {
+        x1 = Number(prompt('第1组有效人数'))
+        y1 = Number(prompt('第1组总人数'))
+        x = x1 / y1
+        console.log(x)
+        index ++
+      }
+      x2 = Number(prompt('第' + index + '组有效人数'))
+      y2 = Number(prompt('第' + index + '组总人数'))
+      y = x2 / y2
+    }
+  
+</script> -->
+
+<!-- <script id="ch0105/21">
+  var N = Number(prompt('输入一个正整数'))
+
+  function s(N) {
+    if(N = 1){
+      console.log('End')
+    }
+    else if(N % 2 === 1) {
+      console.log(N + '*3+1=' + (N * 3 + 1))
+      s(N * 3 + 1)
+    }
+    else {
+      console.log(N + '/2=' + (N / 2))
+      s(N / 2)
+    }
+    return 0
+  }
+
+  s(N)
+</script> -->
+
+<!-- <script>
+  var  n = 1 
+  for (let index = 0; index < 10; index++) {
+    if (n % 2 === 0){
+      console.log(n)
+    }
+    if (n === 5) {
+      console.log('我是If')
+    }
+    n = n + 1
+  }
+</script>
+
+<script>
+  var  n = 1 
+  for (let index = 0; index < 10; index++) {
+    if (n % 2 === 0){
+      console.log(n)
+    }else if (n === 5){
+      console.log('我是If')
+    }else {}
+    n = n + 1
+  }
+</script> -->
