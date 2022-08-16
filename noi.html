@@ -153,6 +153,308 @@
   alert(2**n)
 </script>
 
+<!-- NOI-104 编程基础之逻辑表达式与条件分支 -->
+
+<script type="x" id="ch0104/01">
+  var N = Number(prompt('输入一个正整数'))
+
+  if (N > 0) {
+    console.log('positive')
+  }else if(N = 0) {
+    console.log('zero')
+  }else {
+    console.log('negative')
+  }
+
+</script>
+
+<script type="x" id="ch0104/02">
+  var N = Number(prompt('输入一个浮点数'))
+
+  if (N > 0) {
+    console.log(N.toFixed(2))
+  }else if(N = 0) {
+    console.log(N.toFixed(2))
+  }else {
+    console.log((Math.abs(N).toFixed(2)))
+  }
+  
+</script>
+
+<script type="x" id="ch0104/03">
+  var N = Number(prompt('输入一个正整数'))
+
+  if (N % 2 == 0) {
+    console.log('even')
+  }else  {
+    console.log('odd')
+  }
+    
+</script>
+
+<script type="x" id="ch0104/04">
+  var N = prompt('输入一个正整数')
+  var NASCII = N.charCodeAt(0)
+
+  if (NASCII % 2 == 0) {
+    console.log('NO')
+  }else {
+    console.log('YES')
+  }
+  
+</script>
+
+<script type="x" id="ch0104/05">
+  var x = Number(prompt('输入一个正整数'))
+  var y = Number(prompt('输入一个正整数'))
+
+  if (x > y) {
+    console.log('>')
+  }else if(x = y) {
+    console.log('=')
+  }else {
+    console.log('<')
+  }
+    
+</script>
+
+<script type="x" id="ch0104/06">
+  var N = Number(prompt('输入一个正整数'))
+
+  if (N >= 10 && N <= 99) {
+    console.log('1')
+  }else {
+    console.log('0')
+  }
+  
+</script>
+
+<script type="x" id="ch0104/07">
+  var lucky = Number(prompt('幸运数量'))
+  var con = Number(prompt('鼓励数量')) 
+
+  if (lucky >= 10 || con >= 20) {
+    console.log('1')
+  }else {
+    console.log('0')
+  }
+  
+</script>
+
+<script type="x" id="ch0104/08">
+  var N = Number(prompt('输入一个正整数'))
+
+  if (N % 3 == 0 && N % 5 == 0) {
+    console.log('YES')
+  }else {
+    console.log('NO')
+  }
+  
+</script>
+
+<script type="x" id="ch0104/09">
+  var N = Number(prompt('输入一个正整数'))
+
+  if (N % 3 == 0 && N % 5 == 0 && N % 7 == 0) {
+    console.log('3 5 7')
+  }else if(N % 3 == 0 && N % 5 == 0 && N % 7 != 0) {
+    console.log('3 5')
+  }else if(N % 3 == 0 && N % 7 == 0 && N % 5 != 0){
+    console.log('3 7')
+  }else if(N % 5 == 0 && N % 7 == 0 && N % 3 != 0){
+    console.log('5 7')
+  }else if(N % 3 == 0 && N % 5 != 0 && N % 7 != 0){
+    console.log('3')
+  }else if(N % 3 != 0 && N % 5 == 0 && N % 7 != 0){
+    console.log('5')
+  }else if(N % 3 != 0 && N % 5 != 0 && N % 7 == 0){
+    console.log('7')
+  }else if(N % 3 != 0 && N % 5 != 0 && N % 7 != 0){
+    console.log('n')
+  }
+  
+</script>
+
+<script type="x" id="ch0104/10">
+  var N = Number(prompt('输入数学成绩'))
+  var M = Number(prompt('输入语文成绩'))
+
+  if (N < 60 || M < 60) {
+    console.log('1')
+  }else {
+    console.log('0')
+  }
+  
+  
+</script>
+
+<script type="x" id="ch0104/11">
+  var N = Number(prompt('去看展览的日期'))
+  
+  if (N == 1 || N == 3 || N == 5) {
+  console.log('NO')
+  }else {
+  console.log('YES')
+  }
+</script>
+
+<script type="x" id="ch0104/12">
+  var N = Number(prompt('一次办事要行走的距离'))
+  
+  if ((50 + N / 3) > (N / 1.2)) {
+  console.log('Walk')
+  }else if((50 + N / 3) == (N / 1.2)) {
+  console.log('All')
+  }else {
+    console.log('Bike')
+  }
+  
+</script>
+
+<script type="x" id="ch0104/13">
+  var x = Number(prompt('一个浮点数'))
+  var y = 0
+  if (x >= 0 && x < 5) {
+  y = -x + 2.5
+  }else if(x >= 5 && x < 10) {
+  y = 2 - 1.5*(x-3)*(x-3)
+  }else if(x >= 10 && x < 20) {
+  y = x / 2 - 1.5
+  }
+
+  console.log(y.toFixed(3))
+  
+</script>
+
+<script type="x" id="ch0104/14">
+  var x = Number(prompt('输入邮件重量'))
+  var i = prompt('是否加急')
+  var s = 0
+
+  if(x < 1000) {
+    s = 8
+  }else{
+    s = 8 + Math.ceil((x - 1000) / 500) * 4
+  }
+  if (i == 'n') {
+    s = s 
+  }else if(i == 'y'){
+    s = s + 5
+  }
+  
+  console.log(s)
+</script>
+
+<script type="x" id="ch0104/15">
+  var x = Number(prompt('输入一个数'))
+  var y = Number(prompt('输入一个数'))
+  var z = Number(prompt('输入一个数'))
+  var max 
+
+  if (x > y && x > z) {
+    max = x
+  }else if(y > x && y > z) {
+    max = y
+  }else if(z > x && z > y) {
+    max = z
+  }
+
+  console.log(max)
+
+</script>
+
+<script type="x" id="ch0104/16">
+  var x = Number(prompt('输入一个数'))
+  var y = Number(prompt('输入一个数'))
+  var z = Number(prompt('输入一个数')) 
+
+  if (x + y > z || x + z > y || y + z > x) {
+    console.log('yes')
+  }else {
+    console.log('no')
+  }
+
+</script>
+
+<script type="x" id="ch0104/17">
+  var year = Number(prompt('输入年份'))
+  
+  if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+    console.log('Y')
+  }else {
+    console.log('N')
+  }
+</script>
+
+<script type="x" id="ch0104/18">
+  var x = Number(prompt('输入x坐标'))
+  var y = Number(prompt('输入y坐标'))
+  
+  if ((x >= -1 && x <= 1) && (y >= -1 && y <= 1)) {
+    console.log('yes')
+  }else {
+    console.log('no')
+  }
+</script>
+
+<script type="x" id="ch0104/19">
+  var x = Number(prompt('输入x'))
+  var y = Number(prompt('输入y'))
+  var i = prompt('输入操作符')
+  var s 
+  
+  if (i == '+') {
+    s = x + y
+    console.log(s)
+  }else if(i == '-') {
+    s = x - y
+    console.log(s)
+  }else if(i == '*') {
+    s = x * y
+    console.log(s)
+  }else if(i == '/') {
+    if (y == 0) {
+      console.log('Divded by zero')
+    }else {
+      s = x / y
+      console.log(s)
+    }
+  }else if(i != '+' && i != '-' && i != '*' && i != '/') {
+    console.log('Invalid operator!')
+  }
+  
+</script>
+
+<script type="x" id="ch0104/20">
+  var a = Number(prompt('输入浮点数a'))
+  var b = Number(prompt('输入浮点数b'))
+  var c = Number(prompt('输入浮点数c'))
+  var x1,x2
+
+  if (b*b = 4 * a * c) {
+    console.log('x1=x2=' + ((-1*b + Math.sqrt(b*b - 4 * a * c)/ 2 * a)))
+  }else if (b*b > 4 * a * c) {
+    console.log('x1=' + ((-1*b + Math.sqrt(b*b - 4 * a * c)/ 2 * a)) + ';x2=' + ((-1*b - Math.sqrt(b*b - 4 * a * c)/ 2 * a)))
+  }else {
+    console.log('x1=')
+  }
+</script>
+
+<script type="" id="ch0104/21">
+  var n = Number(prompt('苹果数量'))
+  var x = Number(prompt('x小时能吃完一个苹果'))
+  var y = Number(prompt('y小时后还有几个苹果'))
+  var s
+
+  if (y /x >= n) {
+    console.log('0')
+  }else if(y / x < n) {
+    s = n - Math.ceil(y / x)
+    console.log(s)
+  }
+</script>
+
+
 <!-- NOI-105 编程基础之循环控制 -->
 
 <script type="x" id="ch0105/01">
@@ -688,7 +990,7 @@
 
 </script>
 
-<script type="" id="ch0105/41">
+<script type="x" id="ch0105/41">
   var L = Number(prompt())
 </script>
 
