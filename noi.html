@@ -1296,11 +1296,13 @@
     }
 
     if (sum === m) {
-      return true
+      return 'YES'
     } else {
-      return false
+      return 'NO'
     }
   }
+
+  narcissistic(122)
 
 </script>
 
@@ -1380,10 +1382,70 @@
         return middle.toFixed(3)
     }
 
-    return ((high + low) / 2).toFixed(3)
+    return Number(((high + low) / 2).toFixed(3))
   }
 </script>
 
 
 <script id="weekday">
+
+</script>
+
+<script>
+
+  function pow(a, n) {
+    if (n = 0) {
+      return 1
+    } else {
+      return pow(a, n - 1) * a
+    }
+  }
+
+
+  function fibb(n) {
+    if (n == 1 || n == 2) {
+      return 1
+    } else {
+      return fibb(n - 1) + fibb(n - 2)
+    }
+  }
+
+
+
+</script>
+
+
+<script>
+  debugger
+  function aweb(n) {
+    var a = 3
+    return function bweb(s) {
+      var b = 2
+      return b * b * s * a
+    }
+  }
+
+  p1 = aweb(2)
+  p2 = aweb(3)
+  console.log(p1(5))
+</script>
+
+<script>
+  var target = 24
+  function find(start, history) {
+    if (start < target) {
+      var a = start * 3
+      var ah = '(' + history + ') * 3'
+      find(a, ah)
+
+      var b = start + 5
+      var bh = '(' + history + ') + 5'
+      find(b, bh)
+    }else if (start > target) { return }
+    else {
+      console.log(history)
+      return
+    }
+
+  }
 </script>
