@@ -55,8 +55,12 @@ var ecc2u = {
     }
     return array
   },
-  findIndex: function () {
-
+  findIndex: function (array,predicate) {
+    for (let i = 0; i < array.length; i++) {
+      if (predicate(array[i])) {
+        return i
+      }else return -1
+    }
   },
   findLastIndex: function () {
 
