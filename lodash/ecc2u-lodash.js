@@ -129,8 +129,8 @@ var ecc2u = {
       return res
     }
   },
-  intersection: function () {
-
+  intersection: function (...array) {
+    return new Set(...array)
   },
   intersectionBy: function () {
 
@@ -146,16 +146,17 @@ var ecc2u = {
     return s.slice(0, s.length - 1)
   },
   last: function (array) {
-    var res = []
-    if (array.length == 0) {
-      return []
-    } else {
-      res.push(array.length)
-      return res
-    }
+    return array[array.length]
   },
-  lastIndexOf: function () {
-
+  lastIndexOf: function (array, value, index = array.length - 1) {
+    if (index >= 0) {
+      for (let i = index; i >= 0; i--) {
+        if (array[i] == value) {
+          return i
+        }
+      }
+      return -1
+    }
   },
   nth: function (array, n) {
     if (n >= 0) {
@@ -201,7 +202,29 @@ var ecc2u = {
   isUnderfined: function (value) {
     return value === undefined ? true : false
   },
-
+  union:function (...array) {
+    
+  },
+  sortedIndex:function (array,value) {
+    for (let i = 0; i < array.length; i++) {
+      if (value >= array[i] && value <=array[i+1]) {
+        return i+1
+      }
+    }
+  },
+  uniq:function (array) {
+    return new Set(array)
+  },
+  without: function (array, array2) {
+    for (const iterator of array2) {
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] == iterator) {
+          array.splice(i,1)
+        }
+      }
+    }
+    return array
+  }
 
 
 
