@@ -2,14 +2,9 @@
 
 var ecc2u = {
   chunk: function (array, size) {
-    var res = []
-    var item = []
-    var index = 1
-    for (let i = 1; i <= size; i++) {
-      item.push(array[i])
-
-    }
-    return res
+    return Array.from({ length: Math.ceil(array.length / size) }, (v, i) =>
+      array.slice(i * size, (i + 1) * size)
+    )
   },
   compact: function (array) {
     var res = []
@@ -20,9 +15,13 @@ var ecc2u = {
     }
     return res
   },
-  // difference: function (array, ...array2) {
+  difference: function (array, ...array2) {
+    var res = [];
+    for (const iterator of array2) {
 
-  // },
+    }
+    return res
+  },
   // differenceBy: function (array, array2, iteratee) {
 
   // },
@@ -79,14 +78,23 @@ var ecc2u = {
   //   }
   // },
   flatten: function (array) {
-    return array.flat()
+    return array.reduce((pre, cur) => pre.concat(cur), [])
   },
   flattenDeep: function (array) {
-    var res = []
+    return array.reduce((pre, cur) => {
+      //递归版本
+      return pre.concat(Array.isArray(cur) ? flattenDeep(cur) : cur)
+    }, [])
   },
-  flattenDepth: function (array, depth) {
-
-  },
+  // flattenDepth: function (array, depth) {
+  //   if (depth) {
+  //     return array.reduce((pre, cur) => {
+  //       //递归版本
+  //       return pre.concat(Array.isArray(cur) ? flattenDeep(cur) : cur)
+  //     }, [])
+  //   }
+  //   depth--
+  // },
   fromPairs: function (array) {
     var res = {}
     for (let i = 0; i < array.length; i++) {
@@ -130,7 +138,8 @@ var ecc2u = {
     }
   },
   intersection: function (...array) {
-    return new Set(...array)
+    return array.reduce((accumulator, currentValue) =>
+      accumulator.filter(item => currentValue.includes(item)))
   },
   intersectionBy: function () {
 
@@ -146,18 +155,18 @@ var ecc2u = {
     return s.slice(0, s.length - 1)
   },
   last: function (array) {
-    return array[array.length]
+    return array[array.length - 1]
   },
-  lastIndexOf: function (array, value, index = array.length - 1) {
-    if (index >= 0) {
-      for (let i = index; i >= 0; i--) {
-        if (array[i] == value) {
-          return i
-        }
-      }
-      return -1
-    }
-  },
+  // lastIndexOf: function (array, value, index = array.length - 1) {
+  //   if (index >= 0) {
+  //     for (let i = index; i >= 0; i--) {
+  //       if (array[i] == value) {
+  //         return i
+  //       }
+  //     }
+  //     return -1
+  //   }
+  // },
   nth: function (array, n) {
     if (n >= 0) {
       for (let i = 0; i < array.length; i++) {
@@ -202,29 +211,62 @@ var ecc2u = {
   isUnderfined: function (value) {
     return value === undefined ? true : false
   },
-  union:function (...array) {
-    
+  union: function (...array) {
+
   },
-  sortedIndex:function (array,value) {
+  sortedIndex: function (array, value) {
     for (let i = 0; i < array.length; i++) {
-      if (value >= array[i] && value <=array[i+1]) {
-        return i+1
+      if (value >= array[i] && value <= array[i + 1]) {
+        return i + 1
       }
     }
   },
-  uniq:function (array) {
+  uniq: function (array) {
     return new Set(array)
   },
   without: function (array, array2) {
     for (const iterator of array2) {
       for (let i = 0; i < array.length; i++) {
         if (array[i] == iterator) {
-          array.splice(i,1)
+          array.splice(i, 1)
         }
       }
     }
     return array
+  },
+  groupBy: function (collection, iteratee) {
+    let map = {}
+
+    if (typeof (iteratee) === 'string') {
+      var f = (item) => item[iteratee]
+    } else if (typeof (iteratee) === 'function') {
+      var f = iteratee
+    }
+
+    for (let i = 0; i < collection.length; i++) {
+      let item = collection[i]
+      let key = f(item)
+      //键在对象中
+      if (key in map) {
+        map[key].push(item)
+      } else {
+        //键不在对象中 添加键
+        map[key] = [item]
+      }
+    }
+
+    return map
+  },
+  size: function (collection) {
+    if (Array.isArray(collection)) {
+      return collection.length
+    } else if (typeof (collection) == 'string') {
+      return collection.length
+    } else if (typeof (collection) == 'object') {
+      return Object.keys(collection).length
+    }
   }
+
 
 
 
