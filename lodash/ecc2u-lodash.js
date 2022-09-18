@@ -16,11 +16,12 @@ var ecc2u = {
     return res
   },
   difference: function (array, ...array2) {
-    var res = [];
-    for (const iterator of array2) {
-
+    return array.filter(t => { return !(flattenDeep(array2).includes(t)) })
+    function flattenDeep(array) {
+      return array.reduce((pre, cur) => {
+        return pre.concat(Array.isArray(cur) ? flattenDeep(cur) : cur)
+      }, [])
     }
-    return res
   },
   // differenceBy: function (array, array2, iteratee) {
 
@@ -38,16 +39,12 @@ var ecc2u = {
     return res
   },
   dropRight: function (array, n = 1) {
-    function drop(array, n = 1) {
-      var res = []
-      for (let i = 0; i < array.length; i++) {
-        if (i >= n) {
-          res.push(array[i])
-        }
-      }
-      return res
+    if (array.length < n) {
+      return []
+    } else {
+      array.reverse().splice(0, n)
+      return array.reverse()
     }
-    return drop(array.reverse(), n).reverse()
   },
   // dropRightWhile: function (array, predicate) {
 
@@ -157,16 +154,14 @@ var ecc2u = {
   last: function (array) {
     return array[array.length - 1]
   },
-  // lastIndexOf: function (array, value, index = array.length - 1) {
-  //   if (index >= 0) {
-  //     for (let i = index; i >= 0; i--) {
-  //       if (array[i] == value) {
-  //         return i
-  //       }
-  //     }
-  //     return -1
-  //   }
-  // },
+  lastIndexOf: function (array, value, fromIndex = array.length - 1) {
+    for (var i = fromIndex; i >= 0; i--) {
+      if (value == array[i]) {
+        return i
+      }
+    }
+    return -1
+  },
   nth: function (array, n) {
     if (n >= 0) {
       for (let i = 0; i < array.length; i++) {
@@ -212,7 +207,7 @@ var ecc2u = {
     return value === undefined ? true : false
   },
   union: function (...array) {
-
+    return new Set(array.reduce((pre, cur) => pre.concat(cur), []))
   },
   sortedIndex: function (array, value) {
     for (let i = 0; i < array.length; i++) {
@@ -221,8 +216,11 @@ var ecc2u = {
       }
     }
   },
+  sortedIndexOf: function (array, value) {
+    return array.sort((a, b) => a - b).indexOf(value)
+  },
   uniq: function (array) {
-    return new Set(array)
+    return [...new Set(array)]
   },
   without: function (array, array2) {
     for (const iterator of array2) {
@@ -265,7 +263,7 @@ var ecc2u = {
     } else if (typeof (collection) == 'object') {
       return Object.keys(collection).length
     }
-  }
+  },
 
 
 
