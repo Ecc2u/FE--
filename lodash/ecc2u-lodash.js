@@ -306,7 +306,30 @@ var ecc2u = {
     }
     return chunk(item,2)
   },
-  
+  isArguments: function(value) {
+    return typeof Object.getPrototypeOf(value) === Object.prototype
+  },
+  isArray: function(value) {
+    return typeof Array.isArray(value)
+  },
+  isBoolean: function(value) {
+    return typeof value == 'boolean'
+  },
+  isDate: function(value) {
+    return value instanceof Date
+  },
+  isUnderfined: function (value) {
+    return value == undefined
+  },
+  isString: function (value) {
+    return typeof value == 'string'
+  },
+  toArray: function (value) {
+    if (typeof value == 'String') {
+      return value.split()
+    }
+  },
+
 
 
 
