@@ -69,38 +69,92 @@ function size(collection) {
 }
 function intersection(...array) {
   return array.reduce((accumulator, currentValue) =>
-    accumulator.filter(item => currentValue.includes(item)))   
+    accumulator.filter(item => currentValue.includes(item)))
 }
 function chunk(array, size) {
   //像上取整
-  return Array.from({ length: Math.ceil(array.length / size) }, (v,i) =>
+  return Array.from({ length: Math.ceil(array.length / size) }, (v, i) =>
     array.slice(i * size, (i + 1) * size)
   );
 }
 function flatten(array) {
-  return array.reduce((pre,cur) => pre.concat(cur),[])
+  return array.reduce((pre, cur) => pre.concat(cur), [])
 }
 
 function flattenDeep(array) {
   return array.reduce((pre, cur) => {
     return pre.concat(Array.isArray(cur) ? flattenDeep(cur) : cur)
-  },[])
+  }, [])
 }
 
 function flattenDepth(array, depth) {
-  if (depth) {
+  var res = [];
+  array.forEach(element => {
+    if (Array.isArray(element)) {
+
+    }
+  });
+  return res
+}
+
+function difference(array, ...array2) {
+  return array.filter(t => { return !(flattenDeep(array2).includes(t)) })
+  function flattenDeep(array) {
     return array.reduce((pre, cur) => {
-      //递归版本
-      depth--
-      return pre.concat(depth > 0 && Array.isArray(cur) ? flattenDeep(cur) : cur)
+      return pre.concat(Array.isArray(cur) ? flattenDeep(cur) : cur)
     }, [])
+  }
+}
+
+function dropRight(array, n = 1) {
+  if (array.length < n) {
+    return []
+  } else {
+    array.reverse().splice(0, n)
+    return array.reverse()
+  }
+}
+
+function sortedIndexOf(array, value) {
+  return array.sort((a, b) => a - b).indexOf(value)
+}
+
+function union(...array) {
+  return new Set(array.reduce((pre, cur) => pre.concat(cur), []))
+}
+
+function uniq(array) {
+  return [...new Set(array)]
+}
+
+function xor(...array) {
+  var newArray = array.reduce((pre, cur) => pre.concat(cur))
+  return newArray.filter(t => {
+    var target = sameInArray(newArray)
+    return !target.includes(t)
+  })
+  function sameInArray(array) {
+    var obj = {}
+    var arr = []
+    array.forEach(function (item) {
+      return obj[item] = obj[item] ? obj[item] + 1 : 1
+    })
+    for (const key in obj) {
+      if (obj[key] > 1) {
+        arr.push(Number(key))
+      }
+    }
+    return arr
   }
 }
 
 
 
 
+
+
+
 var s = [['fred', 30, true], ['barney', 40, false]]
 ///// 调用
-console.log(flattenDepth([1, [2, [3, [4]], 5]], 2))
-console.log(Math.ceil(['a', 'b', 'c', 'd'].length / 3))
+console.log(flattenDeep([1, [2, [3, [4]], 5]]))
+console.log(xor([2, 1], [2, 3,4,4]))

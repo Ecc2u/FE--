@@ -83,15 +83,6 @@ var ecc2u = {
       return pre.concat(Array.isArray(cur) ? flattenDeep(cur) : cur)
     }, [])
   },
-  // flattenDepth: function (array, depth) {
-  //   if (depth) {
-  //     return array.reduce((pre, cur) => {
-  //       //递归版本
-  //       return pre.concat(Array.isArray(cur) ? flattenDeep(cur) : cur)
-  //     }, [])
-  //   }
-  //   depth--
-  // },
   fromPairs: function (array) {
     var res = {}
     for (let i = 0; i < array.length; i++) {
@@ -138,12 +129,12 @@ var ecc2u = {
     return array.reduce((accumulator, currentValue) =>
       accumulator.filter(item => currentValue.includes(item)))
   },
-  intersectionBy: function () {
+  // intersectionBy: function () {
 
-  },
-  intersectionWith: function () {
+  // },
+  // intersectionWith: function () {
 
-  },
+  // },
   join: function (array, x) {
     var s = ''
     for (let index = 0; index < array.length; index++) {
@@ -207,7 +198,7 @@ var ecc2u = {
     return value === undefined ? true : false
   },
   union: function (...array) {
-    return new Set(array.reduce((pre, cur) => pre.concat(cur), []))
+    return [...new Set(array.reduce((pre, cur) => pre.concat(cur), []))]
   },
   sortedIndex: function (array, value) {
     for (let i = 0; i < array.length; i++) {
@@ -264,6 +255,26 @@ var ecc2u = {
       return Object.keys(collection).length
     }
   },
+  xor:function(...array) {
+    var newArray = array.reduce((pre, cur) => pre.concat(cur))
+    return newArray.filter(t => {
+      var target = sameInArray(newArray)
+      return !target.includes(t)
+    })
+    function sameInArray(array) {
+      var obj = {}
+      var arr = []
+      array.forEach(function (item) {
+        return obj[item] = obj[item] ? obj[item] + 1 : 1
+      })
+      for (const key in obj) {
+        if (obj[key] > 1) {
+          arr.push(Number(key))
+        }
+      }
+      return arr
+    }
+  }
 
 
 
