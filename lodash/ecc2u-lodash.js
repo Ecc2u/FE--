@@ -255,7 +255,7 @@ var ecc2u = {
       return Object.keys(collection).length
     }
   },
-  xor:function(...array) {
+  xor: function (...array) {
     var newArray = array.reduce((pre, cur) => pre.concat(cur))
     return newArray.filter(t => {
       var target = sameInArray(newArray)
@@ -274,7 +274,39 @@ var ecc2u = {
       }
       return arr
     }
-  }
+  },
+  size: function (collection) {
+    if (Array.isArray(collection)) {
+      return collection.length
+    } else if (typeof (collection) == 'string') {
+      return collection.length
+    } else if (typeof (collection) == 'object') {
+      //返回Object.kenys键组成的数组 .length 数组的长度
+      return Object.keys(collection).length
+    }
+  },
+  sample: function (collection) {
+    if (Array.isArray(collection)) {
+      return collection[parseInt(Math.random() * collection.length)]
+    } else {
+      var keys = Object.keys(collection)
+      return collection[keys[keys.length * Math.random() << 0]]
+    }
+  },
+  toPairs:function(object) {
+    var item = []
+    for (const key in object) {
+      item.push(key, object[key])
+    }
+    function chunk(array, size) {
+      //像上取整
+      return Array.from({ length: Math.ceil(array.length / size) }, (v, i) =>
+        array.slice(i * size, (i + 1) * size)
+      );
+    }
+    return chunk(item,2)
+  },
+  
 
 
 
