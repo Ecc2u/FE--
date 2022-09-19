@@ -293,7 +293,7 @@ var ecc2u = {
       return collection[keys[keys.length * Math.random() << 0]]
     }
   },
-  toPairs:function(object) {
+  toPairs: function (object) {
     var item = []
     for (const key in object) {
       item.push(key, object[key])
@@ -304,18 +304,18 @@ var ecc2u = {
         array.slice(i * size, (i + 1) * size)
       );
     }
-    return chunk(item,2)
+    return chunk(item, 2)
   },
-  isArguments: function(value) {
+  isArguments: function (value) {
     return typeof Object.getPrototypeOf(value) === Object.prototype
   },
-  isArray: function(value) {
+  isArray: function (value) {
     return typeof Array.isArray(value)
   },
-  isBoolean: function(value) {
+  isBoolean: function (value) {
     return typeof value == 'boolean'
   },
-  isDate: function(value) {
+  isDate: function (value) {
     return value instanceof Date
   },
   isUnderfined: function (value) {
@@ -329,7 +329,29 @@ var ecc2u = {
       return value.split()
     }
   },
-
+  repeat: function (string, n) {
+    var t = ''
+    if (n == 0) {
+      return ''
+    } else {
+      while (n > 0) {
+        t = t.concat(string)
+        n--
+      }
+      return t
+    }
+  },
+  once: function (func) {
+    var res = 0
+    var time = 0
+    return function (...v) {
+      if (time == 0) {
+        time++
+        return res = func(...v)
+      } else return res
+    }
+  },
+ 
 
 
 
